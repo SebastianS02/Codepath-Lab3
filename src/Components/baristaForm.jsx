@@ -29,11 +29,17 @@ const BaristaForm = () => {
         if(trueRecipe.temp != inputs['temperature']){
             setCheckedTemperature('wrong');
         }
+        else if(!ingredients['temperature'].includes(inputs['temperature']) ){
+            alert("For temperature, that isn't even an option!")
+        }
         else{
             setCheckedTemperature("correct");
         }
         if(trueRecipe.syrup != inputs['syrup']){
             setCheckedSyrup('wrong');
+        }
+        else if(!ingredients['syrup'].includes(inputs['syrup']) ){
+            alert("For syrup, that isn't even an option!")
         }
         else{
             setCheckedSyrup("correct");
@@ -41,11 +47,17 @@ const BaristaForm = () => {
         if(trueRecipe.milk != inputs['milk']){
             setCheckedMilk('wrong');
         }
+        else if(!ingredients['milk'].includes(inputs['milk']) ){
+            alert("For milk, that isn't even an option!")
+        }
         else{
             setCheckedMilk("correct");
         }
         if(trueRecipe.blended != inputs['blended']){
             setCheckedBlended('wrong');
+        }
+        else if(!ingredients['blended'].includes(inputs['blended']) ){
+            alert("For blended, that isn't even an option!")
         }
         else{
             setCheckedBlended("correct");
