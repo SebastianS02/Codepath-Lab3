@@ -3,9 +3,17 @@ import React, { Component, useEffect, useState } from "react";
 const RecipeChoices = ({ handleChange, label, choices, checked, currentVal }) => {
     return (
         <div className="radio-buttons">
+            <input 
+                type="text"
+                name={label}
+                value={currentVal}
+                placeholder="Guess the ingredient..."
+                onChange={handleChange}
+                className="textbox"
+            />{/*This is all for custom user input*/}
             {choices && choices.map((choice) => (
                 <li key={choice}>
-                    
+                    {/*
                     <input 
                         id={choice}
                         value={choice}
@@ -13,15 +21,6 @@ const RecipeChoices = ({ handleChange, label, choices, checked, currentVal }) =>
                         type="radio"
                         onChange={handleChange}
                         checked={checked == choice}
-                    />
-                    {/*
-                    <input
-                        type="text"
-                        name={label}
-                        value={currentVal}
-                        placeholder="Guess the ingredient..."
-                        onChange={handleChange}
-                        className="textbox"
                     />
                     */}
                     {choice}
